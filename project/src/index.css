@@ -1,0 +1,161 @@
+@import '@fontsource-variable/inter';
+@import '@fontsource/space-grotesk';
+@import 'react-date-range/dist/styles.css';
+@import 'react-date-range/dist/theme/default.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 250 33% 99%;
+    --foreground: 250 33% 3%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 250 33% 3%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 250 33% 3%;
+    
+    --primary: 267 100% 61%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 250 33% 96%;
+    --secondary-foreground: 250 33% 3%;
+    
+    --muted: 250 33% 96%;
+    --muted-foreground: 250 33% 45%;
+    
+    --accent: 250 33% 96%;
+    --accent-foreground: 250 33% 3%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 250 33% 90%;
+    --input: 250 33% 90%;
+    --ring: 267 100% 61%;
+  }
+
+  .dark {
+    --background: 267 35% 5%;
+    --foreground: 250 33% 98%;
+    
+    --card: 267 35% 7%;
+    --card-foreground: 250 33% 98%;
+    
+    --popover: 267 35% 7%;
+    --popover-foreground: 250 33% 98%;
+    
+    --primary: 267 100% 61%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 267 35% 12%;
+    --secondary-foreground: 250 33% 98%;
+    
+    --muted: 267 35% 15%;
+    --muted-foreground: 250 33% 65%;
+    
+    --accent: 267 35% 12%;
+    --accent-foreground: 250 33% 98%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 267 35% 15%;
+    --input: 267 35% 15%;
+    --ring: 267 100% 61%;
+  }
+
+  body {
+    @apply antialiased bg-background text-foreground;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/50 rounded-full hover:bg-primary transition-colors;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-md;
+    @apply border border-border;
+    @apply hover:bg-card/90;
+    @apply transition-all duration-300;
+  }
+
+  .glass-nav {
+    @apply bg-background/80 backdrop-blur-md;
+    @apply border-b border-border;
+  }
+
+  .error-message {
+    @apply p-3 rounded-lg;
+    @apply bg-destructive/10;
+    @apply text-destructive;
+    @apply text-sm;
+    @apply border border-destructive/20;
+  }
+
+  .success-message {
+    @apply p-3 rounded-lg;
+    @apply bg-emerald-500/10;
+    @apply text-emerald-500;
+    @apply text-sm;
+    @apply border border-emerald-500/20;
+  }
+
+  /* Legal Document Styles */
+  .legal-content {
+    @apply max-w-4xl mx-auto text-foreground;
+  }
+
+  .legal-content h1 {
+    @apply text-4xl font-display font-bold mb-8;
+  }
+
+  .legal-content h2 {
+    @apply text-2xl font-display font-semibold mt-12 mb-4 text-foreground/90;
+  }
+
+  .legal-content h3 {
+    @apply text-xl font-display font-semibold mt-8 mb-4 text-foreground/80;
+  }
+
+  .legal-content p {
+    @apply mb-6 leading-relaxed text-muted-foreground;
+  }
+
+  .legal-content ul {
+    @apply mb-6 space-y-2 list-disc list-inside;
+  }
+
+  .legal-content li {
+    @apply text-muted-foreground;
+  }
+
+  .legal-content a {
+    @apply text-primary hover:text-primary/80 underline transition-colors;
+  }
+
+  .legal-content blockquote {
+    @apply pl-4 border-l-4 border-primary/20 italic my-6 text-muted-foreground;
+  }
+
+  .legal-content .metadata {
+    @apply text-sm text-muted-foreground mb-8 pb-8 border-b border-border;
+  }
+
+  .legal-content .section {
+    @apply mb-12 pb-12 border-b border-border last:border-0;
+  }
+}
